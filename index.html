@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-1.7.1.min.js"
+    ></script>
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/31acf3bf38.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css.css" />
+
+    <title>Rust Stats Rating</title>
+  </head>
+
+  <body>
+    <section id="heading">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navtitle navbar-brand" href="#">Rust Stat Rating</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#heading">Rating</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">How To</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <p class="formp">Enter Your Steam ID found on your steam profile!</p>
+        <input
+          class="form form-control form-control-lg"
+          type="text"
+          placeholder="Enter Your Steam ID"
+          id="userInput"
+        />
+        <button
+          id="formBtn"
+          type="button"
+          class="btnform btn btn-success btn-lg"
+        >
+          ENTER
+        </button>
+        <p class="formp2">ENTERED!</p>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <!-- <h1>Rust Stat Rating</h1>-->
+            <h3 class="amog">Calculating Score...</h3>
+            <button
+              id="startbutton"
+              type="button"
+              class="btni btn btn-primary btn-lg btn-outline-light"
+              data-toggle="modal"
+              data-target=".bd-example-modal-lg"
+            >
+              Start Tracking
+            </button>
+            <button
+              type="button"
+              class="btni btn btn-primary btn-lg btn-outline-light"
+              id="endbuttone"
+              data-toggle="modal"
+              data-target="#endbut"
+            >
+              End Tracking
+            </button>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <!-- <img src="images/img1.jpg" />-->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--This is the first pop up when start tracking has been pressed-->
+    <div
+      class="modal fade bd-example-modal-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="false">&times;</span>
+          </button>
+          <h3 class="modal-title" id="exampleModalLabel">
+            Summary of your stats:
+          </h3>
+          <p class="endtrack">
+            Once you have finished playing the game, click end tracking to get
+            your rating!!
+          </p>
+          <div class="modal-body1 mb"></div>
+          <div class="modal-body2 mb"></div>
+          <div class="modal-body3 mb"></div>
+          <div class="modal-body4 mb"></div>
+          <div class="modal-body5 mb"></div>
+          <div class="modal-body6 mb"></div>
+          <div class="modal-body7 mb"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--Second popup when End tracking has been pressed-->
+    <div
+      class="modal fade bd-example-modal-lg endbutton"
+      id="endbut"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="false">&times;</span>
+          </button>
+          <h3 class="modal-title2" id="exampleModalLabel">YOUR RATING IS</h3>
+          <h1 class="rating">540</h1>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Summary of your stats:
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="false">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body1 mb"></div>
+          <div class="modal-body2 mb"></div>
+          <div class="modal-body3 mb"></div>
+          <div class="modal-body4 mb"></div>
+          <div class="modal-body5 mb"></div>
+          <div class="modal-body6 mb"></div>
+          <div class="modal-body7 mb"></div>
+        </div>
+      </div>
+    </div>
+-->
+    <section id="about">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="slike" src="images\rust-crawling.png" alt="test-pic" />
+            <p class="pic-text">
+              Click "Start Tracking", and start playing Rust. After a few days,
+              months or hours, press "End Tracking", and the website will rate
+              your preformance.
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <img class="slike" src="images\test.png" alt="test-pic2" />
+            <p class="pic-text">
+              Shows you in-depth stats, using the Steam API
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <img class="slike" src="images\test.png" alt="test-pic3" />
+            <p class="pic-text">
+              Stay up to date on the development of Bootstrap and reach out to
+              the community with these helpful resources.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h1 class="find">Find Me On</h1>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <a
+              href="https://www.youtube.com/channel/UCtcSUWMxFAnIbEdBVQn-ttA"
+              target="_blank"
+            >
+              <i class="yt fab fa-youtube fa-9x" id="ytbutton"> </i>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="http://steamcommunity.com/waachuu" target="_blank">
+              <i class="st fab fa-steam fa-9x" id="steambutton"></i>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="http://twitter.com" target="_blank">
+              <i class="tw fab fa-twitter fa-9x" id="twitterbutton"></i
+            ></a>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <a href="mailto:paramountggames@gmail.com">
+              <i class="em fas fa-envelope fa-9x" id="gmailbutton"></i
+            ></a>
+          </div>
+        </div>
+        <p class="copyright">© Damir Alić 2021.</p>
+      </div>
+    </section>
+  </body>
+</html>
